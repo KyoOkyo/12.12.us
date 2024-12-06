@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yippeeee!</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXRvend3bGZyaGFyMW5ocHdhNHA1NXpmMDd6cWhjdml0ZGdpa2dubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/147ausGRe6GogM/giphy.webp');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-family: 'Indie Flower', cursive;
+        }
+
+        .slideshow-container {
+            width: 80%;
+            max-width: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            text-align: center;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+
+        button {
+            margin: 10px;
+            background-color: pink;
+            border: none;
+            padding: 15px 30px;
+            cursor: pointer;
+            border-radius: 10px;
+            color: white;
+        }
+
+        button:hover {
+            background-color: lightcoral;
+        }
+
+        audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy 1 Year, My Love! 💖</h1>
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="gallery/photo_1.jpg" alt="Photo 1">
+            <div class="text-overlay">From our first dates(I lost the pics)</div>
+        </div>
+        <div class="slide">
+            <img src="gallery/photo_2.jpg" alt="Photo 2">
+            <div class="text-overlay">To the date you asked me to be your girl</div>
+        </div>
+        <div class="slide">
+            <img src="gallery/photo_3.jpg" alt="Photo 3">
+            <div class="text-overlay">To our first on everything</div>
+        </div>
+        <div class="slide">
+            <img src="gallery/photo_4.jpg" alt="Photo 4">
+            <div class="text-overlay">We were so attached</div>
+        </div>
+        <div class="slide">
+            <img src="gallery/photo_5.jpg" alt="Photo 5">
+            <div class="text-overlay">To our last</div>
+        </div>
+        <div class="slide">
+            <img src="gallery/QR.png" alt="Photo 6">
+            <div class="text-overlay">Scan dis <3</div>
+</video>
+
+  </div>
+</div>
+
+    <!-- Buttons to control slides -->
+    <button onclick="prevSlide()">❮</button>
+    <button onclick="nextSlide()">❯</button>
+
+    <!-- Hidden audio player -->
+    <audio id="myAudio" autoplay loop>
+        <source src="her.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript for slideshow -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlide(index) {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index].style.display = "block";
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Initialize the first slide
+        window.onload = function() {
+            showSlide(currentSlide);
+            document.getElementById('myAudio').play();
+        }
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Website</title>
+    <style>
+        /* CSS Section */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXRvend3bGZyaGFyMW5ocHdhNHA1NXpmMDd6cWhjdml0ZGdpa2dubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/147ausGRe6GogM/giphy.webp');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+        }
+
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: pink;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: lightcoral;
+        }
+
+        audio {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    
+
+    <!-- Play Button -->
+    <button class="play-button" id="playBtn">Play Music</button>
+
+    <!-- Hidden Audio -->
+    <audio id="myAudio" autoplay loop>
+        <source src="her.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // JavaScript Section
+        window.onload = function() {
+            var audio = document.getElementById('myAudio');
+            audio.play(); // Play the audio when the page loads
+        }
+
+        var playBtn = document.getElementById('playBtn');
+        var audio = document.getElementById('myAudio');
+
+        playBtn.onclick = function() {
+            audio.play(); // Start playing the audio when the button is clicked
+            playBtn.style.display = 'none'; // Hide the play button after clicking
+        }
+    </script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anniversary Website</title>
+    <style>
+        /* CSS Section */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXRvend3bGZyaGFyMW5ocHdhNHA1NXpmMDd6cWhjdml0ZGdpa2dubiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/147ausGRe6GogM/giphy.webp');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .play-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: pink;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .play-button:hover {
+            background-color: lightcoral;
+        }
+
+        audio {
+            display: none;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animation section for cute floating hearts */
+        .floating-hearts {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 30px;
+            color: pink;
+            animation: floatUp 5s infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-200px);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-400px);
+                opacity: 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+ 
+
+    <!-- Play Button -->
+    <button class="play-button" id="playBtn">Play Music</button>
+
+    <!-- Hidden Audio -->
+    <audio id="myAudio" autoplay loop>
+        <source src="her.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Floating Hearts Animation -->
+    <div class="floating-hearts" id="floatingHearts"></div>
+
+    <script>
+        // JavaScript Section
+        window.onload = function() {
+            var audio = document.getElementById('myAudio');
+            audio.play(); // Play the audio when the page loads
+            createHearts(); // Create floating hearts on load
+        }
+
+        var playBtn = document.getElementById('playBtn');
+        var audio = document.getElementById('myAudio');
+
+        playBtn.onclick = function() {
+            audio.play(); // Start playing the audio when the button is clicked
+            playBtn.style.display = 'none'; // Hide the play button after clicking
+        }
+
+        // Function to create floating hearts
+        function createHearts() {
+            var container = document.getElementById('floatingHearts');
+
+            // Create 20 hearts floating upwards randomly
+            for (var i = 0; i < 20; i++) {
+                var heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️'; // Heart emoji
+
+                // Randomize position
+                heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position (100vw = 100% of screen width)
+                heart.style.animationDuration = Math.random() * 3 + 4 + 's'; // Randomize the animation speed
+                heart.style.animationDelay = Math.random() * 5 + 's'; // Randomize the delay before starting animation
+
+                container.appendChild(heart);
+            }
+        }
+    </script>
+
+</body>
+</html>
